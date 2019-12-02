@@ -43,7 +43,7 @@ List the name and affiliation of all characters who dont have a homeworld = SELE
  Yoda             | neutral
 
 
-
+List all distinct races represented by at least 2 characters = 
 
 
 
