@@ -45,6 +45,20 @@ List the name and affiliation of all characters who dont have a homeworld = SELE
 
 List all distinct races represented by at least 2 characters = 
 
+SELECT DISTINCT COUNT(*) AS c, race
+FROM characters
+GROUP BY race
+HAVING COUNT(*) > 1 ORDER BY c DESC;
+
+ c | race  
+---+-------
+ 7 | Human
+ 2 | Droid
+(2 rows)
+
+
+List the average time spent by Chewbacca over all planets where he appeared = 
+
 
 
 
