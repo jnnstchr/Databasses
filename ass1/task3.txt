@@ -1,0 +1,51 @@
+List titles from all movies = SELECT title FROM movies;
+
+ Episode IV: A New Hope
+ Episode V: The Empire Strikes Back
+ Episode VI: Return of the Jedi
+
+
+List all planets of gas type = SELECT name FROM planets WHERE type = 'gas';
+
+ Bespin
+
+
+List all characters whose name contains letter s = SELECT name FROM characters WHERE name iLIKE '%s%';
+
+ Han Solo
+ Luke Skywalker
+ Owen Lars
+ Princess Leia
+ Lando Calrissian
+
+
+List all characters who appear on tatooine = SELECT DISTINCT character FROM timetable WHERE planet = 'Tatooine';
+
+ Han Solo
+ Princess Leia
+ Owen Lars
+ Lando Calrissian
+ Chewbacca
+ C-3 PO
+ Obi-Wan Kenobi
+ Rancor
+ R2-D2
+ Jabba the Hutt
+ Luke Skywalker
+
+List the name and affiliation of all characters who dont have a homeworld = SELECT name, affiliation FROM characters WHERE homeworld IS NULL; C-3 PO           | rebels
+
+ Darth Vader      | empire
+ Jabba the Hutt   | neutral
+ Lando Calrissian | rebels
+ R2-D2            | rebels
+ Rancor           | neutral
+ Yoda             | neutral
+
+
+
+
+
+
+
+
