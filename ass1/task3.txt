@@ -57,7 +57,40 @@ HAVING COUNT(*) > 1 ORDER BY c DESC;
 (2 rows)
 
 
-List the average time spent by Chewbacca over all planets where he appeared = 
+List the average time spent by Chewbacca over all planets where he appeared = SELECT AVG(departure_time - arrival_time) FROM timetable WHERE character = 'Chewbacca'; 
+
+       avg                                                                                                                                                                                                                                                                            
+--------------------                                                                                                                                                                                                                                                                   
+ 3.0000000000000000                                                                                                                                                                                                                                                                    
+(1 row)           
+
+
+For each movie, list the number of different planets where the characters appeaered = SELECT COUNT(DISTINCT planet) as planets, movie FROM timetable GROUP BY movie; 
+
+ planets | movie 
+---------+-------
+       4 |     1
+       4 |     2
+       4 |     3
+(3 rows)
+
+
+
+For each character with the same affiliation as their home planet, list the number of appearances for each planet they have visited, ordered by character name =
+
+SELECT characters.name, characters.affiliation FROM characters, planets WHERE homeworld IS NOT NULL AND planets.name = characters.homeworld AND planets.affiliation = characters.affiliation ORDER BY characters.name;
+
+     name      | affiliation 
+---------------+-------------
+ Chewbacca     | rebels
+ Han Solo      | rebels
+ Owen Lars     | neutral
+ Princess Leia | rebels
+(4 rows)
+
+
+
+List the names of the characters that have visited all types of planets, except for planets which no character visited =
 
 
 
